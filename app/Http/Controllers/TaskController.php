@@ -243,7 +243,7 @@ class TaskController extends Controller
      *     ),
      *     @OA\Response(response=204, description="Tarea eliminada exitosamente"),
      *     @OA\Response(response=401, description="No autorizado"),
-     *     @OA\Response(response=403, description="Prohibido - usuario no propietario"),
+     *     @OA\Response(response=403, description="Prohibido - usuario no autorizado"),
      *     @OA\Response(response=500, description="Error en el servidor")
      * )
      */
