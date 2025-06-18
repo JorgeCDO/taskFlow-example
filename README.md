@@ -39,4 +39,4 @@ php artisan migrate
 
 # Instalar Swagger UI
 npm install
-npm run dev
+php artisan serve
