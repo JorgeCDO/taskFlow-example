@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: jorgecdo/taskflow:1.0.0
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/var/www
+        networks:
+            - laravel
+        depends_on:
+            - mysql
+
+    mysql:
+        image: mysql:8
+        restart: always
+        environment:
+            MYSQL_DATABASE: taskflow
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: taskflow
+            MYSQL_PASSWORD: taskflow
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql_data:/var/lib/mysql
+        networks:
+            - laravel
+
+networks:
+    laravel:
+
+volumes:
+    mysql_data:
