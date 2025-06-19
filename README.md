@@ -15,9 +15,10 @@
 
 ---
 
-## ⚙️ Instalación
+## ⚙️ Instalación (Sin Docker)
 
 ```bash
+#Clonar repositorio
 git clone git@github.com:JorgeCDO/taskFlow-example.git
 
 # Instalar dependencias
@@ -40,3 +41,23 @@ php artisan migrate
 # Instalar Swagger UI
 npm install
 php artisan serve
+```
+
+## ⚙️ Instalación (Con Docker)
+```bash
+#Clonar repositorio
+git clone git@github.com:JorgeCDO/taskFlow-example.git
+
+#Haber instalado previamente Docker en tu equipo
+
+#Ir a la raiz del proyecto mediante terminal
+
+#Ejecutar el siguiente comando:
+docker compose up --build
+
+#Acceder
+Acceder a la web mediante la url http://localhost:8000/
+
+#Comando para dar de baja los servicios:
+docker compose down -v
+```
